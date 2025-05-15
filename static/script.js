@@ -208,7 +208,7 @@ function connectToDatabase(selectedDatabase) {
         sections = ['Demo']; // Directly specify GCP sections
     } else if (selectedDatabase == 'PostgreSQL-Azure') {
         sections = [
-            'Finance', 'Customer Support', 'HR', 'Healthcare',
+            'Spykar-Demo','Finance', 'Customer Support', 'HR', 'Healthcare',
             'Insurance', 'Inventory', 'Legal', 'Sales'
         ]; // Directly specify PostgreSQL sections
     } else {
