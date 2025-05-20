@@ -1,0 +1,2 @@
+Table,Description
+spykar_sales_data,"Records detailed information about retail sales transactions including store, date, product, brand, and pricing details. Fields include transaction metadata (store code, party group, store name, date, state, city), product and brand information (product, brand name, season, gender, type, sub-product, style, shade, size, EAN code), pricing and discount data (MRP, item discount, discount voucher, total discount, rate, GST breakdown), and quantities (quantity, total sales, MRP total). Used for sales tracking and financial reporting."
