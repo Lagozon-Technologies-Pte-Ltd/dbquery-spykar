@@ -119,7 +119,7 @@ function changePage(tableName, pageNumber, recordsPerPage) {
     if (pageNumber < 1) return;
 
     // Corrected: Using template literals to construct the URL
-    fetch(`/get_table_data?table_name=${tableName}&page_number=${pageNumber}&records_per_page=${recordsPerPage}`)
+    fetch(`/get_table_data/?table_name=${tableName}&page_number=${pageNumber}&records_per_page=${recordsPerPage}`)
         .then(response => response.json())
         .then(data => {
             const tableDiv = document.getElementById(`${tableName}_table`);
