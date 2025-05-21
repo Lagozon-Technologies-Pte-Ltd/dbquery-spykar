@@ -802,6 +802,7 @@ def display_table_with_styles(data, table_name, page_number, records_per_page):
 
 
 @app.get("/get_table_data/")
+@app.get("/get_table_data")
 async def get_table_data(
     table_name: str = Query(...),
     page_number: int = Query(1),
