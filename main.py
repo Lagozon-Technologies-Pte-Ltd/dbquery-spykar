@@ -234,21 +234,21 @@ class QueryInput(BaseModel):
     query: str
 
 @app.post("/add_to_faqs")
-async def add_to_faqs(data: QueryInput):
+async def add_to_faqs(
+    data: QueryInput,
+    subject: str = Query(..., description="Subject area as query parameter")
+):
     """
-    Adds a user query to the FAQ CSV file on Azure Blob Storage.
-
-    Args:
-        data (QueryInput): The user query.
-
-    Returns:
-        JSONResponse: A JSON response indicating success or failure.
+    Adds a user query to the FAQ CSV file for the specified subject.
+    Subject comes from URL parameter, not request body.
     """
     query = data.query.strip()
     if not query:
-        raise HTTPException(status_code=400, detail="Invalid query!")
+        raise HTTPException(status_code=400, detail="Question cannot be empty!")
+    if not subject:
+        raise HTTPException(status_code=400, detail="Subject must be specified!")
 
-    blob_name = 'table_files/mahindra_questions.csv'
+    blob_name = f"table_files/{subject}_questions.csv"
 
     try:
         # Get the blob client
